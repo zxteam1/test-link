@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test Player</title>
+
+<style>
+html,body{
+margin:0;
+width:100%;
+height:100%;
+overflow:hidden;
+background:#fff;
+}
+iframe{
+width:100%;
+height:100vh;
+border:none;
+}
+</style>
+
+</head>
+<body>
+
+<iframe id="player" allowfullscreen></iframe>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const url = params.get("url");
+
+if(url){
+document.getElementById("player").src = decodeURIComponent(url);
+}else{
+document.body.innerHTML="<h2 style='text-align:center;margin-top:40vh'>No Test URL Found</h2>";
+}
+</script>
+
+</body>
+</html>
